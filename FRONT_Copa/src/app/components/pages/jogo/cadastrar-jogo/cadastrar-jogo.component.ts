@@ -44,7 +44,7 @@ export class CadastrarJogoComponent implements OnInit {
           horizontalPosition: "right",
           verticalPosition: "top",
         });
-        this.router.navigate(["pages/jogo/listar"]);
+        this.router.navigate(["pages/jogo/cadastrar"]);
       },
       error: (error) => {
         console.error("Algum erro aconteceu!");
