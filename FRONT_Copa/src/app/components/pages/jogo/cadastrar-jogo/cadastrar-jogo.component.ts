@@ -12,11 +12,10 @@ import { Component, OnInit } from "@angular/core";
  styleUrls: ["./cadastrar-jogo.component.css"],
 })
 export class CadastrarJogoComponent implements OnInit {
-  selecaoA? : string;
-  selecaoB? : string;
+  selecaoA? : Selecao;
+  selecaoB? : Selecao;
   placar?: number;
   placarB?: number;
-  selecaoAId! : number;
 
 
   constructor(
