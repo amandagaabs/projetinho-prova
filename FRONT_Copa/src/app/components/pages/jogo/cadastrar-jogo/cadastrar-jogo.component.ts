@@ -36,13 +36,18 @@ export class CadastrarJogoComponent implements OnInit {
    placarB : this.placarB,
     };
 
-    this.http.post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo).subscribe({
+    this.http
+    .post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo)
+    .subscribe({
       next: (jogo) => {
         this._snackBar.open("Jogo cadastrado!", "Ok!", {
           horizontalPosition: "right",
           verticalPosition: "top",
         });
         this.router.navigate(["pages/jogo/listar"]);
+      },
+      error: (error) => {
+        console.error("Algum erro aconteceu!");
       },
     });
   }
