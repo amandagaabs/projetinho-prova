@@ -6,14 +6,14 @@
     <label>Seleção A</label>
     <div>
       <select  [(ngModel)]="selecaoAId">
-        <option *ngFor="let selecao of selecoes" [value]="selecao.id">{{selecao.nome}}</option>
+        <option *ngFor="let selecao of selecao" [value]="selecao.id">{{selecao.nome}}</option>
       </select>
     </div>
 
     <label>Seleção B</label>
     <div>
       <select [(ngModel)]="selecaoB">
-        <option *ngFor="let selecao of selecoes" [value]="selecao.id">{{selecao.nome}}</option>
+        <option *ngFor="let selecao of selecao" [value]="selecao.id">{{selecao.nome}}</option>
       </select>
     </div>
 

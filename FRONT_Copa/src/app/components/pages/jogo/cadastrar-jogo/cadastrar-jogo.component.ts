@@ -7,17 +7,17 @@ import { Component, OnInit } from "@angular/core";
 
 
 @Component({
- selector: "app-cadastrar-jogo.component.css",
+ selector: "app-cadastrar-jogo",
  templateUrl:"./cadastrar-jogo.component.html",
  styleUrls: ["./cadastrar-jogo.component.css"],
 })
-
 export class CadastrarJogoComponent implements OnInit {
   selecaoA? : Selecao;
   selecaoB? : Selecao;
   placar?: number;
   placarB?: number;
-  
+  selecaoAId! : number;
+
 
   constructor(
     private http: HttpClient,
@@ -27,24 +27,33 @@ export class CadastrarJogoComponent implements OnInit {
 
   ngOnInit(): void {}
   cadastrar(): void {
-    let jogo: Jogo = {
+    let selecao : Selecao = {
+      id:this.selecaoAId,
+      nome : ""
+    }   
+    let jogo : Jogo = {
       selecaoA : this.selecaoA,
-      selecaoB : this.selecaoB
-};
-this.http
-.post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo)
-.subscribe({
-  next: (funcionario) => {
-    this._snackBar.open("Jogo cadastrado!", "Ok!", {
-      horizontalPosition: "right",
-      verticalPosition: "top",
-    });
-    this.router.navigate(["pages/jogo/cadastrar"]);
-  },
-  error: (error) => {
-    console.error("Algum erro aconteceu!");
-  },
-});
-}
-}
+      selecaoB : this.selecaoB,
+      placar: 0,
+      placarB :0,
+    };
+     console.log(jogo);
+  }
 
+//this.http
+//.post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo)
+//.subscribe({
+  //next: (funcionario) => {
+    //this._snackBar.open("Jogo cadastrado!", "Ok!", {
+      //horizontalPosition: "right",
+      //verticalPosition: "top",
+   // });
+   // this.router.navigate(["pages/jogo/cadastrar"]);
+  //},
+  //error: (error) => {
+    //console.error("Algum erro aconteceu!");
+ // },
+//});/
+//}
+//}
+}
