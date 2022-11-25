@@ -8,9 +8,9 @@ import { Selecao } from "src/app/models/selecao.model";
   templateUrl: "./listar-jogo.component.html",
   styleUrls: ["./listar-jogo.component.css"],
 })
-export class ListarJogoComponent implements OnInit {
+export class ListarJogoComponent implements OnInit {  
+  jogos?: Jogo[];
   constructor(private http: HttpClient) {}
-
   ngOnInit(): void {
 
     this.http.
@@ -18,8 +18,8 @@ export class ListarJogoComponent implements OnInit {
         "https://localhost:5001/api/jogo/listar"
       )
       .subscribe({
-        next: (jogo) =>{
-          //this.jogo = jogo;
+        next: (jogos) =>{
+          this.jogos = jogos;
 
         }
   });
