@@ -20,6 +20,7 @@ export class CadastrarJogoComponent implements OnInit {
 
 
   constructor(
+    
     private http: HttpClient,
     private router: Router,
     private _snackBar: MatSnackBar
@@ -28,7 +29,6 @@ export class CadastrarJogoComponent implements OnInit {
   ngOnInit(): void {}
   cadastrar(): void {
    // console.log(this);
-
     let jogo: Jogo = {
    selecaoA : this.selecaoA,
    selecaoB : this.selecaoB,

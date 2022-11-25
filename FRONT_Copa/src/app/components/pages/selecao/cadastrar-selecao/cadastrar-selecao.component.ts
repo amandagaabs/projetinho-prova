@@ -20,7 +20,6 @@ export class CadastrarSelecaoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-
   cadastrar(): void {
     let selecao: Selecao = {
       nome: this.nome,
