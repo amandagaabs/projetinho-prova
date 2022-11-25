@@ -27,33 +27,26 @@ export class CadastrarJogoComponent implements OnInit {
 
   ngOnInit(): void {}
   cadastrar(): void {
-    let selecao : Selecao = {
-      id:this.selecaoAId,
-      nome : ""
-    }   
-    let jogo : Jogo = {
-      selecaoA : this.selecaoA,
-      selecaoB : this.selecaoB,
-      placar: 0,
-      placarB :0,
-    };
-     console.log(jogo);
-  }
+   // console.log(this);
 
-//this.http
-//.post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo)
-//.subscribe({
-  //next: (funcionario) => {
-    //this._snackBar.open("Jogo cadastrado!", "Ok!", {
-      //horizontalPosition: "right",
-      //verticalPosition: "top",
-   // });
-   // this.router.navigate(["pages/jogo/cadastrar"]);
-  //},
-  //error: (error) => {
-    //console.error("Algum erro aconteceu!");
- // },
-//});/
-//}
-//}
+    let jogo: Jogo = {
+   selecaoA : this.selecaoA,
+   selecaoB : this.selecaoB,
+   placar : this.placar,
+   placarB : this.placarB,
+   
+
+
+    };
+
+    this.http.post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo).subscribe({
+      next: (ator) => {
+        this._snackBar.open("Ator cadastrado!", "Ok!", {
+          horizontalPosition: "right",
+          verticalPosition: "top",
+        });
+        this.router.navigate(["pages/ator/listar"]);
+      },
+    });
+  }
 }
