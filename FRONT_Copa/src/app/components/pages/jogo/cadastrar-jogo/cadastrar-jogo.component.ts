@@ -15,6 +15,9 @@ import { Component, OnInit } from "@angular/core";
 export class CadastrarJogoComponent implements OnInit {
   selecaoA? : Selecao;
   selecaoB? : Selecao;
+  placar?: number;
+  placarB?: number;
+  
 
   constructor(
     private http: HttpClient,
