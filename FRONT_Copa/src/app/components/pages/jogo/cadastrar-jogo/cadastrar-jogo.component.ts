@@ -12,8 +12,8 @@ import { Component, OnInit } from "@angular/core";
  styleUrls: ["./cadastrar-jogo.component.css"],
 })
 export class CadastrarJogoComponent implements OnInit {
-  selecaoA! : string;
-  selecaoB! : string;
+  selecaoA? : string;
+  selecaoB? : string;
   placar?: number;
   placarB?: number;
   selecaoAId! : number;
@@ -30,8 +30,8 @@ export class CadastrarJogoComponent implements OnInit {
   cadastrar(): void {
    // console.log(this);
     let jogo: Jogo = {
-   selecaoA : this.selecaoA,
-   selecaoB : this.selecaoB,
+   //selecaoA : this.selecaoA,
+   //selecaoB : this.selecaoB,
    placar : this.placar,
    placarB : this.placarB,
     };
