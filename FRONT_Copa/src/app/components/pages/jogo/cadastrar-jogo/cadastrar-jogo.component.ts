@@ -30,7 +30,7 @@ export class CadastrarJogoComponent implements OnInit {
   cadastrar(): void {
    // console.log(this);
     let jogo: Jogo = {
-   selecaoA : this.selecaoimage.pngA,
+   selecaoA : this.selecaoA,
    selecaoB : this.selecaoB,
    placar : this.placar,
    placarB : this.placarB,
